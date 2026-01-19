@@ -3,8 +3,12 @@
 #include<cmath>
 using namespace std;
 
-// this code is meant to be used to translate hex and base 10
-// it only looks good up to five rows tho
+/*
+This code is meant to be used to help a person manually translate hex and base 10 for a project
+I was working on. It could be remade into an automatic converter someday, but the project only
+required a few lines of translation, so it was easier to do it manually than to code a system
+which I wouldn't use outside of that singular project.
+*/
 
 int main() {
     int input;
