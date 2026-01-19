@@ -6,6 +6,7 @@ enum class RunState { normal, invalid, modeExit, success };
 int main() {
 	int choice = 0;
 	int uses = 0;
+	bool firstTime = 0;
 	RunState state = RunState::normal;
 
 	while (true) {
@@ -37,15 +38,18 @@ int main() {
 
 		// menu
 		if (choice == 0) {
-			if (uses == 0) {
-				cout << "Welcome to the calculator app! choose what you want to see. Type \"exit\" to exit a mode.\n" <<
-				     "1. addition\n2. subtraction\n3. multiplication\n4. division (no remainder)\n5. factorials\n6. exit\n\n" <<
-				     "Your choice: ";
+		    cout << "Welcome ";
+		    // if first time or >1st time
+			if (firstTime == 0) {
+				cout << "to the calculator app";
+				firstTime = 1;
+				
 			} else {
-				cout << "Welcome back! choose what you want to see. Remember, you can type \"exit\" to exit a mode.\n" <<
-				     "1. addition\n2. subtraction\n3. multiplication\n4. division (no remainder)\n5. factorials\n6. exit\n\n" <<
-				     "Your choice: ";
+				cout << "back";
 			}
+			cout << "! choose what you want to see. Type \"exit\" to exit a mode.\n" <<
+				     "1. addition\n2. subtraction\n3. multiplication\n4. division\n5. factorials\n6. exit\n\n" <<
+				     "Your choice: ";
 			cin >> choice;
 
 			// error
@@ -137,7 +141,7 @@ int main() {
 			continue;
 		}
 
-		// division (no remainder)
+		// division
 		else if (choice == 4) {
             double div1 = 0;
 			double div2 = 0;
@@ -212,7 +216,7 @@ int main() {
 
 		// exit
 		else if (choice == 6) {
-			cout << "Byeeeeeee :3 :3 :3\n";
+			cout << "Byeeeeeee\n";
 			break;
 		}
 	}
